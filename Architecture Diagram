@@ -1,0 +1,13 @@
+Data Source
+     ↓
+Cloud Storage (S3)
+     ↓
+Event Trigger
+     ↓
+Decision Engine
+     ↓
+Lambda / AWS Glue
+     ↓
+Processed Data
+     ↓
+Lakehouse Analytics
