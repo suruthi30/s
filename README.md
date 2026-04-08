@@ -1,77 +1,73 @@
 Cloud-Native Data Lakehouse with Granular Access Control
-Overview
-This project implements a cloud-native, serverless data lakehouse architecture capable of processing terabytes of structured and unstructured data.
-The system uses an event-driven ETL pipeline that automatically adapts to data size and complexity, selecting the optimal cloud processing service to minimize cost while maintaining efficient processing time.
-The solution demonstrates how modern cloud technologies can be used to build scalable, resilient, and secure data pipelines for large-scale analytics.
-Problem Statement
-Design and implement a completely serverless ETL pipeline capable of processing large volumes of data. The pipeline should be:
-Event-driven
-Highly scalable
-Fault tolerant
-Cost optimized
-The key challenge is implementing a self-tuning mechanism that dynamically selects the best processing service (such as AWS Glue or AWS Lambda) and configuration based on the characteristics of the incoming data.
-Key Features
-Serverless Architecture
-The pipeline uses fully managed cloud services, eliminating the need to manage infrastructure.
-Event-Driven Processing
-Whenever new data is uploaded, the system automatically triggers the processing pipeline.
-Self-Tuning Mechanism
-The pipeline analyzes incoming data and selects the most efficient processing service:
-Small datasets → AWS Lambda
-Large datasets → AWS Glue
-This helps reduce processing cost while maintaining performance.
-Data Lakehouse Architecture
-The system combines the benefits of a Data Lake and a Data Warehouse, enabling both storage and analytical queries.
-Granular Access Control
-Fine-grained access control ensures that users can access only the data they are authorized to view.
-High Scalability
-The system automatically scales depending on the volume of incoming data.
-Architecture
-The system consists of the following major components:
-Data Ingestion Layer
-Accepts structured and unstructured data from multiple sources.
-Cloud Storage (Data Lake)
-Stores raw and processed data.
-Event Trigger
-Automatically initiates the ETL process when new data is uploaded.
-Processing Layer
-Uses AWS Lambda for lightweight processing.
-Uses AWS Glue for large-scale data processing.
-Data Catalog
-Maintains metadata and schema information.
-Analytics Layer
-Enables querying and analysis of processed data.
-Security & Access Control
-Implements granular permissions for secure data access.
-ETL Pipeline Workflow
-Data is uploaded to the cloud storage.
-An event trigger activates the processing pipeline.
-The system analyzes the data size and complexity.
-The self-tuning engine selects the optimal processing service.
+
+Solution Overview
+
+This project presents a cloud-native, serverless data lakehouse solution designed to process large-scale structured and unstructured datasets efficiently. The system implements a dynamic ETL pipeline that automatically selects the most suitable processing service based on the data's size and complexity.
+The goal of the solution is to minimize operational cost while ensuring high performance and scalability. By leveraging serverless cloud services, the architecture eliminates infrastructure management and enables automatic scaling.
+
+Proposed Solution
+
+The proposed solution introduces an event-driven serverless ETL pipeline that processes data in a highly scalable and resilient manner.
+When new data arrives in the storage layer, an event trigger automatically activates the processing pipeline. The system then analyzes the dataset and dynamically selects the optimal processing service such as AWS Lambda for lightweight processing or AWS Glue for large-scale distributed processing.
+This adaptive mechanism ensures that each stage of the pipeline runs with the most efficient configuration.
+
+Key Components of the Solution
+
+1. Data Ingestion Layer
+The system accepts both structured and unstructured data from multiple sources such as application logs, files, or databases. Incoming data is stored in the cloud storage layer.
+2. Cloud Storage (Data Lake)
+All raw data is stored in a centralized cloud storage system that acts as the data lake. The storage layer keeps both raw and processed datasets, enabling flexible data processing and analytics.
+3. Event-Driven Processing
+Whenever new data is uploaded, an event notification triggers the ETL workflow. This ensures that the system processes data automatically without manual intervention.
+4. Self-Tuning Processing Engine
+A key innovation of the solution is the self-tuning decision engine.
+The engine evaluates:
+Data size
+Data format
+Processing complexity
+Based on these parameters, the system dynamically chooses the most suitable processing option.
+Example decision logic:
+Small datasets → processed using serverless functions for fast execution and low cost.
+Large datasets → processed using distributed processing services to handle high data volume efficiently.
+5. Data Transformation
+During the ETL process, the system performs several transformation operations such as:
+Data cleaning
+Removing duplicates
+Format conversion
+Data aggregation
+The transformed data is then stored in optimized formats to improve query performance.
+6. Lakehouse Architecture
+The solution follows a lakehouse model where data is organized into multiple layers:
+Raw Layer – stores original data
+Processed Layer – contains cleaned and transformed data
+Analytics Layer – optimized for querying and analysis
+This structure enables both large-scale storage and efficient analytical queries.
+7. Granular Access Control
+To ensure security and compliance, the solution implements fine-grained access control mechanisms. Access permissions can be configured at multiple levels such as:
+User level
+Role level
+Dataset level
+Column level
+This ensures that users only access the data relevant to their roles.
+
+Workflow of the Solution
+
+Data is uploaded to the cloud storage layer.
+An event trigger detects the new data.
+The ETL pipeline is automatically activated.
+The self-tuning engine analyzes the dataset.
+The optimal processing service and configuration are selected.
 Data transformation and cleaning are performed.
-Processed data is stored in the lakehouse for analytics.
-Advantages
-Fully serverless infrastructure
-Automatic scaling
-Cost optimization through dynamic resource selection
-Secure and controlled data access
-Supports both structured and unstructured data
-Use Cases
-Healthcare data analytics
-IoT sensor data processing
-Financial data analysis
-Log and application monitoring
-Large-scale data analytics platforms
-Technologies Used
-AWS Lambda
-AWS Glue
-Amazon S3
-Event-Driven Architecture
-Cloud Data Lakehouse Concepts
-Future Improvements
-Machine learning-based optimization for service selection
-Real-time data streaming support
-Enhanced monitoring and logging
-Advanced data governance features
+Processed data is stored in the lakehouse for analytics and querying.
+
+Benefits of the Solution
+
+Serverless architecture eliminates infrastructure management.
+Automatic scaling supports processing of terabytes of data.
+Cost optimization through intelligent service selection.
+Event-driven automation enables real-time data processing.
+Secure data access using granular access control.
+
 Conclusion
-This project demonstrates a scalable and cost-efficient approach to building modern cloud-native data pipelines. By leveraging serverless technologies and intelligent service selection, the system can efficiently process large volumes of data while maintaining strong security and access control.
+
+The proposed solution demonstrates how a cloud-native data lakehouse architecture combined with a self-optimizing ETL pipeline can efficiently process large-scale datasets. By dynamically selecting the most suitable cloud services and configurations, the system achieves a balance between performance, scalability, and cost efficiency.
