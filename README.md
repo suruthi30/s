@@ -68,7 +68,7 @@ Security: Role-Based Access Control
 
 Live Demo
 🚀 Project Demo:
-https://adapti-data-spark.lovable.app⁠�
+https://adapti-data-spark.lovable.app
 
 Advantages
 
